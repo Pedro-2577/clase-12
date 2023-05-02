@@ -12,9 +12,9 @@ function getAlumnos(req, res) {
 
 
 function getAlumnoDetail(req, res) {
-    const legajo = req.params.legajo
+    const id = req.params.id
 
-    services.getAlumnoById(legajo)
+    services.getAlumnoById(id)
         .then(function (alumno) {
             if (alumno) {
                 res.send(views.createAlumnoPage(alumno))
@@ -38,12 +38,13 @@ function postAgregarAlumno(req, res) {
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         año: req.body.año,
-        legajo: req.body.legajo
+        legajo: req.body.legajo,
+        id: req.body.id
       };
           
             if(newAlumno) {
                 services.addAlumno(newAlumno)
-                .then(function (newProduct) {
+                .then(function (newAlumno) {
                     res.send(views.createPage('Alumno creado', `<p>El alumno ${newAlumno.nombre} ha sido creado con el legajo ${newAlumno.legajo}</p>`))
                 })
             }else{
