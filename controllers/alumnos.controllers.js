@@ -53,9 +53,9 @@ function postAgregarAlumno(req, res) {
 }
 
 function getAlumnoEdit(req, res) {
-    const legajo = req.params.legajo
+    const id = req.params.id
 
-    services.getAlumnoById(legajo)
+    services.getAlumnoById(id)
         .then(function (alumno) {
             if (alumno) {
                 res.send(views.editAlumnoPage(alumno))
@@ -72,11 +72,12 @@ function postAlumnoEdit(req, res) {
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         año: req.body.año,
-        legajo: req.body.legajo
+        legajo: req.body.legajo,
+        id: req.body.id
       };
             
             if(newAlumno) {
-                 services.editAlumno(newAlumno)
+                 services.editAlumno(newAlumno.id, newAlumno)
                 .then(function (newAlumno) {
                     res.send(views.createPage('Alumno editado', `<p>El alumno ${newAlumno.nombre} ha sido editado</p>`))
                 })
@@ -86,9 +87,9 @@ function postAlumnoEdit(req, res) {
 }
 
 function getAlumnoDelete(req, res) {
-    const legajo = parseInt(req.params.legajo)
+    const id = parseInt(req.params.id)
 
-    services.deleteAlumno(legajo)
+    services.deleteAlumno(id)
         .then(function (alumno) {
             if (alumno) {
                 res.send(views.createPage('Alumno eliminado', `<p>El alumno ${alumno.nombre} ha sido eliminado</p>`))
