@@ -1,1 +1,146 @@
-[{"_id":"644838db00aa16e3536c58cc","legajo":"12345","nombre":"Juan","apellido":"Perez","año":"2021"},{"_id":"644838db00aa16e3536c58cd","legajo":"56789","nombre":"María","apellido":"Gomez","año":"2020"},{"_id":"644838db00aa16e3536c58ce","legajo":"98765","nombre":"Pedro","apellido":"Rodríguez","año":"2019"},{"_id":"644838db00aa16e3536c58cf","legajo":"54321","nombre":"Ana","apellido":"Martínez","año":"2018"},{"_id":"644838db00aa16e3536c58d0","legajo":"67890","nombre":"Carlos","apellido":"González","año":"2017"},{"_id":"644838db00aa16e3536c58d1","legajo":"23456","nombre":"Sofía","apellido":"López","año":"2016"},{"_id":"644838db00aa16e3536c58d2","legajo":"78901","nombre":"Diego","apellido":"Fernández","año":"2015"},{"_id":"644838db00aa16e3536c58d3","legajo":"34567","nombre":"Laura","apellido":"Ramos","año":"2014"},{"_id":"644838db00aa16e3536c58d4","legajo":"89012","nombre":"José","apellido":"Silva","año":"2013"},{"_id":"644838db00aa16e3536c58d5","legajo":"45678","nombre":"Paula","apellido":"Hernández","año":"2012"},{"_id":"644838db00aa16e3536c58d6","legajo":"90123","nombre":"Miguel","apellido":"Ortega","año":"2011"},{"_id":"644838db00aa16e3536c58d7","legajo":"56789","nombre":"Isabel","apellido":"Díaz","año":"2010"},{"_id":"644838db00aa16e3536c58d8","legajo":"34567","nombre":"Luis","apellido":"Navarro","año":"2009"},{"_id":"644838db00aa16e3536c58d9","legajo":"67890","nombre":"Carolina","apellido":"Romero","año":"2008"},{"_id":"644838db00aa16e3536c58da","legajo":"56015","nombre":"Luis","apellido":"González","año":"2020"},{"_id":"644838db00aa16e3536c58db","nombre":"name","apellido":"secondname","año":"1998","legajo":"54331"},{"_id":"644838db00aa16e3536c58dc","nombre":"Pedro","apellido":"Mendez","año":"2033","legajo":"25777"},{"_id":"644838db00aa16e3536c58dd","nombre":"german","apellido":"asd","año":2021,"legajo":15345,"deleted":true}]
+[{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58cc"
+  },
+  "legajo": 12345,
+  "nombre": "Juan",
+  "apellido": "Perez",
+  "año": 2021
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58cd"
+  },
+  "legajo": 56789,
+  "nombre": "María",
+  "apellido": "Gomez",
+  "año": 2020
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58ce"
+  },
+  "legajo": 98765,
+  "nombre": "Pedro",
+  "apellido": "Rodríguez",
+  "año": 2019
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58cf"
+  },
+  "legajo": 54321,
+  "nombre": "Ana",
+  "apellido": "Martínez",
+  "año": 2018
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58d0"
+  },
+  "legajo": 67890,
+  "nombre": "Carlos",
+  "apellido": "González",
+  "año": 2017
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58d1"
+  },
+  "legajo": 23456,
+  "nombre": "Sofía",
+  "apellido": "López",
+  "año": 2016
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58d2"
+  },
+  "legajo": 78901,
+  "nombre": "Diego",
+  "apellido": "Fernández",
+  "año": 2015
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58d3"
+  },
+  "legajo": 34567,
+  "nombre": "Laura",
+  "apellido": "Ramos",
+  "año": 2014
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58d4"
+  },
+  "legajo": 89012,
+  "nombre": "José",
+  "apellido": "Silva",
+  "año": 2013
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58d5"
+  },
+  "legajo": 45678,
+  "nombre": "Paula",
+  "apellido": "Hernández",
+  "año": 2012
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58d6"
+  },
+  "legajo": 90123,
+  "nombre": "Miguel",
+  "apellido": "Ortega",
+  "año": 2011
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58d7"
+  },
+  "legajo": 56789,
+  "nombre": "Isabel",
+  "apellido": "Díaz",
+  "año": 2010
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58d8"
+  },
+  "legajo": 34567,
+  "nombre": "Luis",
+  "apellido": "Navarro",
+  "año": 2009
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58d9"
+  },
+  "legajo": 67890,
+  "nombre": "Carolina",
+  "apellido": "Romero",
+  "año": 2008
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58da"
+  },
+  "legajo": 56015,
+  "nombre": "Luis",
+  "apellido": "González",
+  "año": 2020
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58db"
+  },
+  "nombre": "name",
+  "apellido": "secondname",
+  "año": 1998,
+  "legajo": 54331
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58dc"
+  },
+  "nombre": "Pedro",
+  "apellido": "Mendez",
+  "año": 2033,
+  "legajo": 25777
+},{
+  "_id": {
+    "$oid": "644838db00aa16e3536c58dd"
+  },
+  "nombre": "german",
+  "apellido": "asd",
+  "año": 2021,
+  "legajo": 15345,
+  "deleted": true
+}]

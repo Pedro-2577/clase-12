@@ -12,7 +12,6 @@ app.use('/', express.static('public'))
 app.use('/', AlumnosRoute)
 app.use('/api', AlumnosRouteApi)
 
-
 app.listen(2023, function () {
     console.log('Servidor corriendo en el host http://localhost:2023')
 })

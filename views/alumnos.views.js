@@ -4,7 +4,7 @@ function createAlumnoListPage(alumnos) {
     html += '<ul>'
 
     for (let i = 0; i < alumnos.length; i++) {
-        html += `<li>${alumnos[i].nombre} ${alumnos[i].apellido} <a href="/alumnos/${alumnos[i].legajo}">Ver</a> - <a href="/edit/${alumnos[i].legajo}">Editar</a> - <a href="/delete/${alumnos[i].legajo}">Borrar</a></li>`
+        html += `<li>${alumnos[i].nombre} ${alumnos[i].apellido} <a href="/alumnos/${alumnos[i]._id}">Ver</a> - <a href="/edit/${alumnos[i]._id}">Editar</a> - <a href="/delete/${alumnos[i]._id}">Borrar</a></li>`
     }
 
     html += '</ul>'
@@ -75,6 +75,7 @@ function editAlumnoPage(alumno) {
         <label for="año">Año</label>
         <input type="text" name="año" id="año" value="${alumno.año}">
         <input type="hidden" name="legajo" id="legajo" value="${alumno.legajo}">
+        <input type="hidden" name="id" id="id" value="${alumno._id}">
         <input type="submit" value="Enviar">
         </form>
     `

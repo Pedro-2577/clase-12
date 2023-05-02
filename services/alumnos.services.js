@@ -4,79 +4,38 @@ import { MongoClient } from 'mongodb'
 const client = new MongoClient("mongodb://127.0.0.1:27017")
 const db = client.db("DB_AHT")
 
-
-
-
 async function getAlumnos(filter = {}) {
     await client.connect()
-
     return db.collection("Alumnos").find({ deleted: {$ne: true} }).toArray()
-
 }
 
-async function getAlumnoById(legajo) {
-    return getAlumnos()
-        .then(function (alumnos) {
-            let alumno = null
-            for (let i = 0; i < alumnos.length; i++) {
-                if (alumnos[i].legajo == legajo) {
-                    alumno = alumnos[i]
-                    break
-                }
-            }
-
-            return alumno
-        })
+async function getAlumnoById(id) {
+    await client.connect()
+    return db.collection("Alumnos").findOne({ _id: new ObjectId(id) })
 }
 
 async function addAlumno(newAlumno) {
-    const alumnos = await getAlumnos()
-
-        const nuevoAlum = {
-            ...newAlumno,
-        }
-        alumnos.push(nuevoAlum)
-        
-        await writeFile('./data/alumnos.json', JSON.stringify(alumnos))
-        
-        return alumnos
+    await client.connect()
+    return db.collection("Alumnos").insertOne(newAlumno)
 }
 
-async function editAlumno(legajo, alumno) {
-    let alumnos = await getAlumnos()
-
-    console.log(legajo)
-    
-    for (let i = 0; i < alumnos.length; i++) {
-        console.log(alumnos[i].legajo)
-        if (legajo == alumnos[i].legajo) {
-            console.log('Alumno modificado correctamente')
-            alumnos[i] = alumno
-            await writeFile('./data/alumnos.json', JSON.stringify(alumnos))
-            break
-        }
-    }
-    
-    return alumno
+async function editAlumno(id, alumno) {
+    await client.connect()
+    await db.collection("Alumnos").updateOne({ _id: new ObjectId(id) }, { $set: alumno })
+    return alumno    
 }
 
-async function deleteAlumno(legajo) {
-    let alumnos = await getAlumnos()
-    let alumno = null
-
-    for (let i = 0; i < alumnos.length; i++) {
-        if (alumnos[i].legajo == legajo) {
-            alumnos[i].deleted = true
-            alumno = alumnos[i]
-            break
-        }
+async function deleteAlumno(id) {
+    await client.connect()
+    await db.collection("Alumnos").deleteOne({ _id: new ObjectId(id) })
+    return {
+        id: id
     }
+}
 
-    if(alumno){
-        await writeFile('./data/alumnos.json', JSON.stringify(alumnos))
-    }
-
-
+async function replaceAlumno(id, alumno) {
+    await client.connect()
+    await db.collection("Alumnos").replaceOne({ _id: new ObjectId(id) }, alumno)
     return alumno
 }
 
@@ -104,5 +63,6 @@ export {
     addAlumno,
     editAlumno,
     deleteAlumno,
-    btnUndeleted
+    replaceAlumno,
+    btnUndeleted  // <-- hacer que esto ando y pasarlo a db
 }
